@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>註冊頁面</title>
+    <!-- 初始化css -->
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- register css文件 -->
+    <link rel="stylesheet" href="../css/register.css">
+	<style>
+	
+	.mask{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color:rgba(0,0,0,0.5);
+		z-index: 9999;
+		display: none;
+	}
+		.mask .mask-center{
+			width: 520px;
+			height: 420px;
+			background-color: #ffffff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -160px;
+			margin-left: -260px;
+			border-radius: 5px;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+
+		.mask .mask-center .center_box{
+
+			width: 286px;
+			margin: 20px auto 0;
+
+		}
+
+		.mask .mask-center .close-btn{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 18px;
+			height: 18px;
+			display: inline-block;
+			background: url("../images/msg_close.png") 0 0;
+		}
+
+		.mask .mask-center .logo-img{
+
+			display: block;
+			width: 106px;
+			margin: 0 auto;
+		}
+		.mask .mask-center .txtBox{
+
+			position: relative;
+			text-align: center;
+			margin: 0 auto;
+			color: #999999;
+
+		}
+
+		.txtBox span:nth-child(1){
+			content: "";
+			border-top: 1px solid #ededed;
+			display: block;
+			position: absolute;
+			width: 50px;
+			top: 8px;
+			left: 0;
+		}
+		.txtBox span:nth-child(3){
+			content: "";
+			border-top: 1px solid #ededed;
+			display: block;
+			position: absolute;
+			width: 50px;
+			top: 8px;
+			right: 0;
+		}
+		.center_box .buttons{
+			margin: 15px 0 20px;
+			text-align: center;
+			/*font-size: 0;*/
+			letter-spacing: -999px;
+
+		}
+		.center_box .buttons a {
+			background-image: url('../images/login_icons_tiny.svg');
+			width: 48px;
+			height: 48px;
+			margin-right: 10px;
+			letter-spacing: 0;
+
+		}
+
+		.center_box .buttons a:nth-child(1){
+			display: inline-block;
+		}
+		.center_box .buttons a:nth-child(2){
+			display: inline-block;
+			background-position: -80px 0;
+		}
+		.center_box .buttons a:nth-child(3){
+			display: inline-block;
+			background-position: -160px 0;
+		}
+		.center_box .buttons a:nth-child(4){
+			display: inline-block;
+			background-position: -240px 0;
+		}
+		.center_box .buttons a:nth-child(5){
+			display: inline-block;
+			background-position: -320px 0;
+			margin-right: 0;
+
+		}
+
+		.center_box .mail-login {
+			margin-top: 15px;
+		}
+
+		.center_box .mail-login .clear-input {
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		.clear-input {
+			display: inline-block;
+			padding: 0 10px;
+			height: 36px;
+			font-size: 16px;
+			line-height: 1;
+			color: #777;
+			background: #FCFCFC;
+			border: 1px solid #CCC;
+			border-radius: 3px;
+			width: 250px;
+			box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+			-webkit-transition: color .2s linear,border-color .3s linear;
+		}
+
+		.btn18 {
+			font-size: 18px;
+			padding: 0 15px;
+			border-radius: 3px;
+			height: 36px;
+			line-height: 36px;
+		}
+
+		.rbtn {
+			display: block;
+			background: #E53E49;
+			background: linear-gradient( #E53E49, #D43636);
+			box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 1px 0 rgba(255,255,255,.3);
+			text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+			color: #fff;
+			border: 1px solid #C90000;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.switch-back {
+			text-align: center;
+			margin: 10px 0;
+		}
+
+		.red-link {
+			color: #9A0000;
+		}
+		.center_box a {
+			cursor: pointer;
+		}
+	
+	
+	</style>
+    
+</head>
+
+<body>
+<div class="w">
+    <!-- header -->
+    <div class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/huaban_logo.png" alt="" style="width:150px;height:auto;">
+            </a>
+        </div>
+    </div>
+    <!-- registerarea -->
+    <div class="registerarea">
+        <h3>
+            註冊新用戶
+            <em>
+                我有帳號，去<a href="#" id="login" class="login">登錄</a>
+            </em>
+        </h3>
+        <div class="reg_form">
+
+            <form action="demo.php">
+                <ul>
+                    <li>
+                        <label for="tel">手機:</label>
+                        <input type="text" class="inp" id="tel">
+                        <span class="">
+
+						</span>
+                    </li>
+                    <li>
+                        <label for="">信箱:</label>
+                        <input type="text" class="inp" id="mail">
+                        <span></span>
+                    </li>
+                    <li>
+                        <label for="">匿稱:</label>
+                        <input type="text" class="inp" id="nc">
+                        <span></span>
+                    </li>
+                    <li>
+                        <label for="">短信驗證碼:</label>
+                        <input type="text" class="inp" id="msg">
+                        <span></span>
+                    </li>
+                    <li>
+                        <label for="">登錄密碼:</label>
+                        <input type="text" class="inp" id="pwd">
+                        <span>
+                            </span>
+                    </li>
+                    <li class="safe">
+                        安全程度
+                        <em class="ruo">弱</em>
+                        <em class="zhong">中</em>
+                        <em class="qiang">強</em>
+                    </li>
+
+                    <li>
+                        <label for="">確認密碼:</label>
+                        <input type="text" class="inp" id="surepwd">
+                        <span></span>
+                    </li>
+                    <li class="agree">
+
+                        <input type="checkbox">同意協議並註冊
+                        <a href="#">《知果果用戶協議》</a>
+                    </li>
+                    <li>
+                        <input type="submit" value="完成註冊" class="over">
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p class="links">
+            關於我們 | 聯系我們 | 聯系客服 | 商家入駐 | 營銷中心 | 手機 | 友情鏈接 | 銷售聯盟 | 社區 | 公益 | English Site | Contact U
+        </p>
+
+        <p class="copyright">
+            地址：xx市xx區xx路xxxxxx 郵編：100096 電話：xxxx-xxx-xxx 傳真：xxxx-xxxxxx 郵箱: xxxxxxx.tw <br> xxxxxxxxxxxxxxxxxxxxxxxxxx
+        </p>
+    </div>
+</div>
+
+
+<!--登入面板-->
+
+<section id="mask" class="mask">
+
+    <div id="mask_center" class="mask-center">
+        <!--關閉-->
+        <a href="#" class="close-btn" id="close_btn"></a>
+        <!--logo-->
+        <img class="logo-img" src="../images/logo_2x.png" alt="">
+        <!--内容-->
+        <div class="center_box">
+            <!--第三方帳號登入-->
+            <div class="txtBox">
+                <span></span>
+                <span class="txt">使用第三方帳號登入</span>
+                <span></span>
+            </div>
+            <!--按鈕圖片-->
+            <div class="buttons">
+                <a href="#" title="微博帳號登入" rel="nofollow" class="weibo"></a>
+                <a href="#" title="QQ帳號登入" rel="nofollow" class="qzone"></a>
+                <a href="#" title="微信帳號登入" rel="nofollow" class="wechat"></a>
+                <a href="#" title="豆瓣帳號登入" rel="nofollow" class="douban"></a>
+                <!--<a href="#" title="人人帳號登入" rel="nofollow" class="renren"></a>-->
+            </div>
+            <div class="txtBox">
+                <span></span>
+                <span class="txt">使用手機/郵件登入</span>
+                <span></span>
+            </div>
+            <!--表单-->
+            <form action="" method="post" class="mail-login">
+                <input type="hidden" name="_ref" value="frame">
+                <input type="text" name="email" placeholder="輸入手機或郵件" class="clear-input">
+                <input name="password" type="password" placeholder="密碼" class="clear-input">
+                <a href="#" onclick="return false;" class="btn btn18 rbtn">
+                        <span class="text"> 登入
+                        </span>
+                </a>
+            </form>
+            <div class="switch-back">
+                <a class="red-link">忘記密碼»</a>
+                還沒有花瓣帳號嗎？
+                <a class="red-link">點擊註冊»</a>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<script src="../js/jquery-3.1.1.js"></script>
+    
+	<script>
+	$("#login").click(function(){
+	
+		$(".mask").css("display","block");
+	});
+	
+	
+
+    $("#close_btn").click(()=>{
+        $(".mask").css("display","none");
+    });
+	
+	
+	</script>
+	
+	<script src="../js/reg.js"></script>
+
+
+</body>
+
+</html>
